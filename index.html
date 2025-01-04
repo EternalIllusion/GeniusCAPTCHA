@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <script src="./fakeCAPTCHA.js"></script>
+    <script src="./jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <LINK REL="stylesheet" HREF="cstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证您是否为入机</title>
+</head>
+
+<body>
+    <div class="captcha-main" id="captcha-body">
+        <div class="toparea">
+            <div class="instructions">请选择<a id="pass" href="#">所有的图片</a>包含</div>
+            <div class="target-image-text">
+                <h1 id="target-img-name">红绿灯</h1>
+            </div>
+            <div class="instructions">如果没有，请点击验证。</div>
+        </div>
+        <div class="imagearea">
+            <table class="imagetable">
+                <tr>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(1)" id="1" src=""></td>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(2)" id="2" src=""></td>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(3)" id="3" src=""></td>
+                </tr>
+                <tr>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(4)" id="4" src=""></td>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(5)" id="5" src=""></td>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(6)" id="6" src=""></td>
+                </tr>
+                <tr>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(7)" id="7" src=""></td>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(8)" id="8" src=""></td>
+                    <td class="imagesquare"><img class="unselected" onclick="captchaclick(9)" id="9" src=""></td>
+                </tr>
+            </table>
+        </div>
+        <!-- check and submit da captcha -->
+        <table class="no-table">
+            <tr>
+                <td>
+                    <div class="try-again">请重试。<div>
+                </td>
+                <td><button id="verify" class="verify">验证</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="main">
+        <h2>在访问网页之前，我们需要验证您是否为入机。</h2>
+        <h3>点击下方进行验证。</h3><h4>若无弹窗提示，请关闭去广告插件。</h4>
+        <div id="captcha"></div><!-- 跳转按钮 --><button id="redirectButton" onclick="handleRedirect()" disabled>请先进行验证</button>
+        <p>验证服务由<a href="http://eterill.us.kg/">EternalIllusion</a>友情提供。</p>
+        <p>GeniusCAPTCHA &copy;EternalIllusion,2025</p>
+    </div>
+    <script src="./main.js"></script>
+
+</body>
+
+</html>

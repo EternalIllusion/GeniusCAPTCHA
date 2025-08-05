@@ -10,7 +10,7 @@ function CAPTCHA(config) {
     this.config = config
     this.times = 0;
     this.success = false;
-    this.clicked = false;
+    this.clicked = 0;
 
     function end(successs) {
         self.success = successs;
@@ -63,7 +63,7 @@ function CAPTCHA(config) {
     //绑定点击事件
     document.querySelector(config.element + " .captcha-clickable").onclick = function() {
         //寻找所需元素
-        self.clicked = true;
+        self.clicked = 1;
         var checkbox = document.querySelector(config.element + " .captcha-checkbox");
         var spinner = document.querySelector(config.element + " .captcha-spinner");
         var success = document.querySelector(config.element + " .captcha-success");
@@ -120,17 +120,26 @@ function CAPTCHA(config) {
 
         }
     }
+
     document.querySelector("#pass").onclick = function geniusverified(self) {
-        self.success = true;
+        caped = true;
         for (let i = 1; i < 10; i++) {
-            if (true || document.getElementById(i).className === "selected") {
+            document.getElementById(i).className = "selected";
+        }
+    }
+
+    document.querySelector("#passsec").onclick = function geniusverifiedsec(self) {
+        console.log(caped);
+        if(caped){
+            self.success = true;
+            for (let i = 1; i < 10; i++) {
                 document.getElementById(i).className = "selected correct";
             }
+            setTimeout(function() {
+                document.getElementById("captcha-body").style.display = "none";
+                end(true);
+            }, 1100); // Redirect after 2 seconds if CAPTCHA is correct}
         }
-        setTimeout(function() {
-            document.getElementById("captcha-body").style.display = "none";
-            end(true);
-        }, 1100); // Redirect after 2 seconds if CAPTCHA is correct
     }
     document.querySelector(".verify").onclick = function resetcaptcha(self) {
         self.answerdb = [];
@@ -141,8 +150,6 @@ function CAPTCHA(config) {
                 self.answerdb.push(0); //unselected
             }
         }
-
-        if (arrayEquals(self.answerdb, [0, 0, 0, 0, 0, 0, 0, 0, 0]) == false || true) { //check if answers are correct
             //incorrect
             for (let i = 1; i < 10; i++) {
                 if (document.getElementById(i).className === "selected") {
@@ -156,16 +163,6 @@ function CAPTCHA(config) {
                 document.getElementsByClassName("verify")[0].disabled = false;
             }, 800);
 
-        } else {
-            for (let i = 1; i < 10; i++) {
-                if (document.getElementById(i).className === "selected") {
-                    document.getElementById(i).className = "selected correct";
-                }
-            }
-            setTimeout(function() {
-                redirectToLink()
-            }, 1100); // Redirect after 2 seconds if CAPTCHA is correct
-        }
     }
 
     function redirectToLink() {
@@ -177,7 +174,7 @@ function CAPTCHA(config) {
         var height = 330;
         var leftPosition = (window.screen.width / 2) - (width / 2);
         var topPosition = (window.screen.height / 2) - (height / 2);
-        window.open('https://eterill.us.kg/', 'popup', 'width=' + width + ',height=' + height + ',top=' + topPosition + ',left=' + leftPosition);
+        window.open('https://eterill.xyz/', 'popup', 'width=' + width + ',height=' + height + ',top=' + topPosition + ',left=' + leftPosition);
     }
 
     function nextimg() {

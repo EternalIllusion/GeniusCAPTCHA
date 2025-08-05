@@ -1,4 +1,4 @@
-var target = "http://bing.com/"//跳转目标
+var target = "http://zjzs.pages.dev/"//跳转目标
 var btnBefore = "请先进行验证";
 var btnDuring = "验证中...";
 var btnAfter = "刷新重试";
@@ -14,10 +14,10 @@ var config = {
 };
 var adtitle = '骷髅打金服，上线就送VIP!';
 var adimg = "./fakeAD.webp";
-var adcont = '<a href="http://eterill.us.kg/"><img src="' + adimg + '"></img></a>';
+var adcont = '<a href="http://eterill.xyz/"><img src="' + adimg + '"></img></a>';
 var addur = Math.floor(Math.random() * (20000 - 10000 + 1)) + 15000;
 
-
+var caped = false;
 
 var isad = true;
 var captcha = new CAPTCHA(config);

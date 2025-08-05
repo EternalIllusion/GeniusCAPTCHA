@@ -1,7 +1,7 @@
 # GeniusCAPTCHA3
 
 一个整人专用的虚假验证码。
-试玩链接：[🔗点我](https://eterill.us.kg/GeniusCAPTCHA/)
+试玩链接：[🔗点我](https://eterill.xyz/GeniusCAPTCHA/)
 
 ## 功能
 
@@ -11,7 +11,7 @@
 
 - 假广告（也可以是真的）
 
-##配置与使用
+## 配置与使用
 
 你只需要配置好`main.js`中开头部分的内容就行了
 
@@ -32,11 +32,11 @@ var config = {
 };
 var adtitle = '骷髅打金服，上线就送VIP!';//自定义假广告标题
 var adimg = "./fakeAD.webp";
-var adcont = '<a href="http://eterill.us.kg/"><img src="' + adimg + '"></img></a>';//假广告内容，也可以是真的广告
+var adcont = '<a href="http://eterill.xyz/"><img src="' + adimg + '"></img></a>';//假广告内容，也可以是真的广告
 var addur = Math.floor(Math.random() * (20000 - 10000 + 1)) + 15000;//广告每个多少ms弹出一次，这里是15-25秒随机
 ```
 
-###自定义验证码图片
+### 自定义验证码图片
 
 图片的标题请在 `index.html` 中修改 `红绿灯` 字样。
 
@@ -44,8 +44,9 @@ var addur = Math.floor(Math.random() * (20000 - 10000 + 1)) + 15000;//广告每�
 
 修改完图片记得更新配置中图片数量。制作图片建议用 `99*99` 分辨率拉伸到 `120*120` ~~，糊得更清晰（~~
 
-##引用和鸣谢
-使用并融合了fakeCAPTCHA和fakeCAPTCHAtest,相当于融合怪。
+## 引用和鸣谢
+
+使用并融合了fucklinux/fakeCAPTCHA和fakeCAPTCHAtest,相当于融合怪。
 
 感谢@cbbff666的灵感和支持。
 
